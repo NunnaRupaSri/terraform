@@ -7,7 +7,7 @@ resource "aws_instance" "web" {
   key_name = "Dev-Ops"
 
 tags = {
-    Name = "Hello world"
+    Name = "Terraform-ec2"
 }
 }
 output "PUBLIC_IP_OF_INSTANCE" {
