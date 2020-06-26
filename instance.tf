@@ -22,7 +22,7 @@ provisioner "remote-exec" {
     password = "DevOps321"
   }
     inline  {
-    "yum install nginx -y"
+    "yum install nginx"
     "systemctl start nginx"
   }
 }
