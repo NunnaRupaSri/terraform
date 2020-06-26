@@ -23,10 +23,10 @@ resource "aws_instance" "web" {
     user = "root"
     password = "DevOps321"
     }
-    inline = {
+    inline = [
     "yum install nginx",
     "systemctl start nginx"
-    }
+    ]
   }
   tags = {
   Name = "Terraform-ec2"
