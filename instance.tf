@@ -15,12 +15,13 @@ data "aws_ami" "default" {
   key_name = "Dev-Ops"
 
 provisioner "remote-exec" {
+
   connection {
     host = self.public_ip
     user = "root"
     password = "DevOps321"
   }
-  inline = {
+    inline  {
     "yum install nginx -y"
     "systemctl start nginx"
   }
