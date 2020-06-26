@@ -2,7 +2,7 @@ provider "aws" {
   region = "us-east-1"
 }
 resource "aws_instance" "web" {
-  ami = "ami-004cd5eb616d96667"
+  owner = "265378241500"
   instance_type = "t2.micro"
   key_name = "Dev-Ops"
 
