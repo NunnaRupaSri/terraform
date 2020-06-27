@@ -5,8 +5,12 @@ resource "aws_instance" "web" {
   ami = "ami-003ff40010762ace2"
   instance_type = "t2.micro"
   key_name = "Dev-Ops"
-  provisioner "local-exec" {
-  type = "shell"
+  provisioner "remote-exec" {
+     connection {
+      host = self.public_ip
+      user = "root"
+      password = "DevOps321"
+    }
   inline = [
    "sudo apt-get update",
     "sudo apt-get install -y php",
