@@ -3,7 +3,6 @@ provider "aws" {
 }
 resource "aws_instance" "web" {
   ami = "ami-003ff40010762ace2"
-  ami_name ="test"
   instance_type = "t2.micro"
   key_name = "Dev-Ops"
   provisioner "local-exec" {
