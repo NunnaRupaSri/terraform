@@ -11,3 +11,10 @@ resource "aws_instance" "web" {
   }
 }
 
+resource "dnsimple_record" "web" {
+  domain = "web.com"
+  name = "test"
+  value = "$(aws_instance.web.public_ip)"
+  type = "A"
+}
+
