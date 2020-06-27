@@ -11,9 +11,9 @@ resource "aws_instance" "web" {
   provisioner "local-exec" {
   type = "shell"
   inline = [
-   "sudo apt-get update"
-    "sudo apt-get install -y php"
-    "sudo apt-get install -y apache2"
+   "sudo apt-get update",
+    "sudo apt-get install -y php",
+    "sudo apt-get install -y apache2",
     "sudo git clone https://github.com/brikis98/php-app.git /var/www/html/app"
   ]
   }
