@@ -1,7 +1,7 @@
 provider "aws" {
   region = "us-east-1"
 }
-resource "aws_instance" "web" {
+resource "aws_instance" "example" {
   ami = "ami-003ff40010762ace2"
   instance_type = "t2.micro"
   key_name = "Dev-Ops"
@@ -11,10 +11,10 @@ resource "aws_instance" "web" {
   }
 }
 
-resource "dnsimple_record" "web" {
-  domain = "web.com"
+resource "dnsimple_record" "example" {
+  domain = "example.com"
   name = "test"
-  value = "$(aws_instance.web.public_ip)"
+  value = "$(aws_instance.example.public_ip)"
   type = "A"
 }
 
