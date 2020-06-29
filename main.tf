@@ -1,10 +1,10 @@
 provider "aws" {
   region                          = "us-east-1"
 }
-resource "aws_instance" "example" {
+resource "aws_instance" "web" {
   ami                             = "ami-003ff40010762ace2"
   instance_type                   = "t2.micro"
-  vpc_security_group_ids          = ["$(aws_security_groups.instance.id)"  ]
+  vpc_security_group_ids          = ["$(aws_security_groups.instance.id)"]
   user_data                       = <<-EOF
                                     #!/bin/bash
                                     echo "Hello, World" > index.html
