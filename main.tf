@@ -4,6 +4,7 @@ provider "aws" {
 resource "aws_instance" "example" {
   ami                             = "ami-003ff40010762ace2"
   instance_type                   = "t2.micro"
+  vpc_security_group_ids          = ["$(aws_security_groups_id)"  ]
   user_data                       = <<-EOF
                                     #!/bin/bash
                                     echo "Hello, World" > index.html
