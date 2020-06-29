@@ -7,7 +7,7 @@ data "aws_ami" "centos7" {
   owners = [973714476881]
 }
 resource "aws_instance" "web" {
-  ami                             = "${data.aws_ami.centos7.id}"
+  ami                             = "${data.aws_ami.centos7.owners}"
   instance_type                   = "t2.micro"
   vpc_security_group_ids          = ["$(aws_security_groups.instance.id)"]
 
