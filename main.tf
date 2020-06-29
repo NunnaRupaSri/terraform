@@ -3,6 +3,7 @@ provider "aws" {
 }
 
 data "aws_ami" "centos7" {
+  most_recent = true
   owners = [973714476881]
 }
 resource "aws_instance" "web" {
