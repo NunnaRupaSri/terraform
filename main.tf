@@ -10,7 +10,7 @@ resource "aws_instance" "web" {
               nohup busybox httpd -f -p 8080 &
               EOF
   tags = {
-    Name = Terraform-example
+    name = Terraform-example
   }
 }
 
