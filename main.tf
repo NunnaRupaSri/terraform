@@ -10,12 +10,12 @@ resource "aws_instance" "example" {
                                     nohup busybox httpd -f -p 8080 &
                                     EOF
   tags                            = {
-    name                          = terraform
+    name                          = example
   }
 }
 
 resource "aws_security_group" "instance" {
-  name                            = "terraform"
+  name                            = "example"
   ingress {
     from_port                     = 8080
     protocol                      = "tcp"
